@@ -1,0 +1,297 @@
+[
+  {
+    "path": "examples/basic/01_waitgroup/main.go",
+    "kind": "success",
+    "contains": [
+      "所有 Worker 執行完畢"
+    ],
+    "counts": {
+      " 啟動": 3,
+      " 完成": 3
+    }
+  },
+  {
+    "path": "examples/basic/02_channel/main.go",
+    "kind": "success",
+    "contains": [
+      "接收到的值: 42"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/basic/03_rwmutex/main.go",
+    "kind": "success",
+    "contains": [
+      "RWMutex 計數: 1000"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/basic/04_atomic/main.go",
+    "kind": "success",
+    "contains": [
+      "最終計數: 1000"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/basic/05_context_cancel/main.go",
+    "kind": "success",
+    "contains": [
+      "正在掃描中...",
+      "原因: context canceled"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/basic/06_worker_pool/main.go",
+    "kind": "success",
+    "contains": [
+      "結果: [2 4 6 8 10]"
+    ],
+    "counts": {
+      "處理任務": 5
+    }
+  },
+  {
+    "path": "examples/basic/07_semaphore/main.go",
+    "kind": "success",
+    "contains": [
+      "所有任務完成，併發上限=2"
+    ],
+    "counts": {
+      "進入臨界區": 5
+    }
+  },
+  {
+    "path": "examples/basic/08_race/main.go",
+    "kind": "race",
+    "contains": [
+      "WARNING: DATA RACE"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/basic/09_deadlock/main.go",
+    "kind": "deadlock",
+    "contains": [
+      "fatal error: all goroutines are asleep - deadlock!"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/advanced/01_select/main.go",
+    "kind": "success",
+    "contains": [
+      "接收成功: 來自 ch1 的資料",
+      "接收成功: 來自 ch2 的資料",
+      "錯誤: 讀取超時！"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/advanced/02_once/main.go",
+    "kind": "success",
+    "contains": [
+      "localhost:8080"
+    ],
+    "counts": {
+      "正在初始化設定檔": 1,
+      "取得設定:": 5
+    }
+  },
+  {
+    "path": "examples/advanced/03_cond/main.go",
+    "kind": "success",
+    "contains": [
+      "廣播：條件已達成！"
+    ],
+    "counts": {
+      "收到通知，開始執行任務": 3
+    }
+  },
+  {
+    "path": "examples/advanced/04_sync_map/main.go",
+    "kind": "success",
+    "contains": [
+      "找到 banana, 長度為: 6",
+      "Key: apple, Value: 5",
+      "Key: banana, Value: 6",
+      "Key: cherry, Value: 6"
+    ],
+    "counts": {
+      "Key:": 3
+    }
+  },
+  {
+    "path": "examples/advanced/05_errgroup/main.go",
+    "kind": "success",
+    "contains": [
+      "最終群組錯誤: 資料庫連線中斷"
+    ],
+    "counts": {
+      "收到群組取消通知": 2
+    }
+  },
+  {
+    "path": "examples/advanced/06_leak_send/main.go",
+    "kind": "leak",
+    "contains": [
+      "timeout",
+      "LEAK: blocked sender",
+      "[chan send]",
+      "main.leakySender("
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/ultimate/01_select_timeout/main.go",
+    "kind": "success",
+    "contains": [
+      "錯誤: API 請求超時，中斷操作！",
+      "緩衝通道讓逾時後的發送端仍可結束"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/ultimate/02_once/main.go",
+    "kind": "success",
+    "contains": [
+      "Dark Mode"
+    ],
+    "counts": {
+      "正在讀取設定檔並初始化": 1,
+      "獲取的配置:": 5
+    }
+  },
+  {
+    "path": "examples/ultimate/03_cond/main.go",
+    "kind": "success",
+    "contains": [
+      "廣播：條件已達成！"
+    ],
+    "counts": {
+      "收到通知，開始執行任務": 3
+    }
+  },
+  {
+    "path": "examples/ultimate/04_sync_map/main.go",
+    "kind": "success",
+    "contains": [
+      "成功讀取 Key 2 的值: 20",
+      "鍵: 0, 值: 0",
+      "鍵: 1, 值: 10",
+      "鍵: 2, 值: 20",
+      "鍵: 3, 值: 30",
+      "鍵: 4, 值: 40"
+    ],
+    "counts": {
+      "鍵:": 5
+    }
+  },
+  {
+    "path": "examples/ultimate/05_errgroup/main.go",
+    "kind": "success",
+    "contains": [
+      "最終群組錯誤: Task 2 執行失敗"
+    ],
+    "counts": {
+      "收到群組取消通知": 2
+    }
+  },
+  {
+    "path": "examples/ultimate/06_pool/main.go",
+    "kind": "success",
+    "contains": [
+      "使用 buffer 內容: Data row 1",
+      "複用 buffer 內容: Data row 2"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/ultimate/07_leak_receive/main.go",
+    "kind": "leak",
+    "contains": [
+      "LEAK: blocked receiver",
+      "[chan receive]",
+      "main.leakyWorker("
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/practical/01_worker_pool_timeout/main.go",
+    "kind": "success",
+    "contains": [
+      "任務 2 失敗: context deadline exceeded",
+      "所有 Worker 已退出"
+    ],
+    "counts": {
+      "成功完成": 2,
+      "開始處理任務": 3,
+      "任務通道已關閉": 2
+    }
+  },
+  {
+    "path": "examples/practical/02_select_no_deadlock/main.go",
+    "kind": "success",
+    "contains": [
+      "放棄寫入以避免死鎖",
+      "接收數據超時，安全退出"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/practical/03_lock_order/main.go",
+    "kind": "success",
+    "contains": [
+      "餘額: 950 1050；總額: 2000"
+    ],
+    "counts": {
+      "成功從帳戶": 2
+    }
+  },
+  {
+    "path": "examples/practical/04_errgroup/main.go",
+    "kind": "success",
+    "contains": [
+      "任務 1：成功結束",
+      "已即時自我中斷並釋放資源",
+      "核心錯誤為: 資料庫連線中斷"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/supplement/mutex/main.go",
+    "kind": "success",
+    "contains": [
+      "Mutex 計數: 1000"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/supplement/leak_send_fixed/main.go",
+    "kind": "success",
+    "contains": [
+      "timeout",
+      "FIXED: buffered sender exited"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/supplement/leak_receive_fixed/main.go",
+    "kind": "success",
+    "contains": [
+      "FIXED: receiver canceled"
+    ],
+    "counts": {}
+  },
+  {
+    "path": "examples/supplement/pprof/main.go",
+    "kind": "success",
+    "contains": [
+      "pprof HTTP status: 200",
+      "goroutine profile captured"
+    ],
+    "counts": {}
+  }
+]
